@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CBSE Mark Sheet</title>
+  <style>
+    /* CSS styles for the mark sheet */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    .student-info {
+      margin-bottom: 20px;
+    }
+
+    .subject-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .subject-table th, .subject-table td {
+      padding: 8px;
+      border: 1px solid #000;
+    }
+
+    .total {
+      text-align: right;
+      font-weight: bold;
+    }
+    p{
+      background: rgb(12, 12, 216);
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="/images/cbse.png" alt="CBSE Logo" class="logo">
+    <h1>Central Board of Secondary Education</h1>
+    <h3>Mark Sheet</h3>
+  </div>
+
+  
+    <p>Name:<%= NAME %></p>
+    <p>Roll No:<%= ROLL %></p>
+    <p>FatherName:<%= FATHER %></p>
+    <p>Gender:<%= G %></p>
+
+
+  <table class="subject-table">
+    <tr>
+      <th>Subject</th>
+      <th>Marks Obtained</th>
+      <th>Maximum Marks</th>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td><%= Eng %></td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Mathematics</td>
+      <td><%= MAT %></td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Hindi</td>
+      <td><%= Hin %></td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Chemistry</td>
+      <td><%= Che %></td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Physic</td>
+      <td><%= Phy %></td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td colspan="2" class="total"><%= TOTAL %></td>
+    </tr>
+  </table>
+  <% if (AVG >=90 && AVG >= 80) { %>
+    <p style="background: green;">Percentage: <%= AVG %> A</p>
+    <%} else if(AVG <=70 && AVG >= 60)  { %>
+    <p style="background: rgb(109, 128, 0);">Percentage: <%= AVG %> B  ---- PASS</p>
+    <%} else if(AVG <=60 && AVG >= 50)  { %>
+    <p style="background: rgb(234, 129, 0);">Percentage: <%= AVG %> C ---- PASS</p>
+    <%} else if(AVG <= 50 && AVG >= 40)  { %>
+      <p style="background: rgb(234, 86, 0);">Percentage: <%= AVG %> D ---- PASS</p>
+      <%}
+      else if(AVG <= 39 && AVG >= 0)  { %>
+        <p style="background: rgb(255, 4, 4);">Percentage: <%= AVG %> F ---- FAIL</p>
+        <%}  %>
+    <p>This mark sheet is provisional and subject to verification.</p>
+   
+
+
+  
+</body>
+</html>
+
+
+<!-- <p>Percentage: <%= AVG %></p> -->
